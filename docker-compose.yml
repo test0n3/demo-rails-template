@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:14.2
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: postgres_db_password
+    ports:
+      - '5432:5432'
+    volumes:
+      - app-db:/var/lib/postgresql/data
+
+  web:
+    build:
+      context: .
+    volumes:
+      - .:/opt/app
+    links:
+      - db
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env
+
+volumes:
+  app-db:
