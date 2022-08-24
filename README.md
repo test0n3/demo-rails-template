@@ -21,7 +21,6 @@ add a set of random characters for **SECRET-TOKEN** and save the file with the n
 
 ### Building the image and containers
 ```zsh
-docker-compose run --no-deps web rails new . --force --database=postgresql
 docker-compose build
 docker-compose up
 ```
