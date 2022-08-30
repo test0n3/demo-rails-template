@@ -1,7 +1,7 @@
 # Demo Ruby on Rails Template Engines
 
 ## Goal
-Show three template engines that are used by RoR:
+Try these three template engines used by RoR:
 - [ERB](https://guides.rubyonrails.org/layouts_and_rendering.html)
 - [HAML](https://haml.info/)
 - [SLIM](http://slim-lang.com/)
@@ -14,24 +14,47 @@ This demo uses:
 - Ruby on Rails v 6.1.6.1
 - Postgresql v 14.2
 
-all running inside docker containers. So it is required to have Docker and docker-compose with engine v 20.10.12
+All running inside docker containers. So it is required to have `Docker` and `docker-compose` with **engine v 20.10.12**
 
-also edit the file `.env-template`:
+Edit the file `.env-template`:
 add a set of random characters for **SECRET-TOKEN** and save the file with the name `.env`
 
+The commands displayed here work under any Linux distro.
+
 ### Building the image and containers
+
+To build the project(get docker images and prepare the container) This is done once after cloning the repo:
 ```zsh
 docker-compose build
+```
+
+To run the container:
+```zsh
 docker-compose up
 ```
-to stop the execution, use `ctrl + c`.
-you'll need another terminal screen to run the following to set the database:
+To stop the execution, use `ctrl + c`.
+
+To set the database:
 ```zsh
 docker-compose run web rake db:create
 ```
-after stopping the execution, use the following to stop the container:
+After stopping the execution, use the following to stop the container:
 ```zsh
 docker-compose down
+```
+
+To check the working containers, use:
+```zsh
+docker-compose images
+```
+
+Another option to check containers with [VS Code](https://code.visualstudio.com/) is the [Docker Addon](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
+
+### IMPORTANT
+If Postgres is installed and already running in your system, it is required to stop the service as the Postgres docker image uses the same port.
+
+```zsh
+sudo systemctl stop postgres.service
 ```
 
 ## Sources for Docker procedure
