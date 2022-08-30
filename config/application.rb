@@ -20,7 +20,7 @@ module App
     # config.eager_load_paths << Rails.root.join("extras")
     config.log_level = :debug
     config.log_tags  = [:subdomain, :uuid]
-    config.logger    = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
+    config.logger    = ActiveSupport::TaggedLogging.new(ActiveSupport::Logger.new(STDOUT))
 
     # config.cache_store = :redis_store, ENV['CACHE_URL'], { namespace: 'redis::cache' }
     # config.active_job.queue_adapter = :sidekiq
