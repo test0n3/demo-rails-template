@@ -191,6 +191,8 @@ GEM
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.7.0, < 2.0)
+    ruby-graphviz (1.2.5)
+      rexml
     ruby-progressbar (1.11.0)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
@@ -217,6 +219,9 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    stateoscope (0.1.3)
+      activesupport
+      ruby-graphviz
     thor (1.2.1)
     tilt (2.0.11)
     turbolinks (5.2.1)
@@ -271,6 +276,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver (>= 4.0.0.rc1)
   spring
+  stateoscope (~> 0.1.3)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
